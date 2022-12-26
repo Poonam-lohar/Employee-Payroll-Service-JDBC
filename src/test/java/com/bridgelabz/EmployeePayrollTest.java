@@ -16,6 +16,6 @@ public class EmployeePayrollTest {
     public void givenEmpPayrollInDB_WhenRetrieved_ShouldMatchEmployeeCount() {
         EmployeePayroll employeePayroll = new EmployeePayroll();
         List<EmployeePayrollData> employeePayrollData = employeePayroll.readEmployeePayrollData();
-        Assertions.assertEquals(0, employeePayrollData.size());
+        Assertions.assertEquals(4, employeePayrollData.size());
     }
 }

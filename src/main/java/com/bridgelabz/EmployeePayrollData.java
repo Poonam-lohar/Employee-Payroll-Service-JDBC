@@ -6,14 +6,14 @@ public class EmployeePayrollData {
 
     public int id;
     public String name;
-    public double basic_pay;
-    public LocalDate start;
+    public double salary;
+    public LocalDate Start;
 
-    public EmployeePayrollData(int id, String name, double basic_pay, LocalDate start) {
+    public EmployeePayrollData(int id, String name, double salary, LocalDate Start) {
         this.id = id;
         this.name = name;
-        this.basic_pay = basic_pay;
-        this.start = start;
+        this.salary = salary;
+        this.Start = Start;
     }
 
     @Override
@@ -21,8 +21,8 @@ public class EmployeePayrollData {
         return "EmployeePayrollData{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", basic_pay=" + basic_pay +
-                ", start=" + start +
+                ", salary=" + salary +
+                ", Start=" + Start +
                 '}';
     }
 }

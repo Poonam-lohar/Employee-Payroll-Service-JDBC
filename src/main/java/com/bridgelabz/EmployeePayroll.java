@@ -13,7 +13,7 @@ public class EmployeePayroll {
      * arraylist of employees.
      */
     public List<EmployeePayrollData> readEmployeePayrollData() {
-        String jdbcUrl = "jdbc:mysql://localhost:3306/payroll_service?characterEncoding=utf8";
+        String jdbcUrl = "jdbc:mysql://localhost:3306/employee_payroll_services?characterEncoding=utf8";
         String username = "root";
         String password = "poonam@5691";
 
@@ -43,14 +43,14 @@ public class EmployeePayroll {
              * Adding name,basic_pay and date of the employee in arraylist while resultSet.next() has elements inside
              */
             while (resultSet.next()) {
-                int employeeId = resultSet.getInt("id");
+                int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
                 double salary = resultSet.getDouble("salary");
                 /*
                  * LocalDate is an immutable date-time object that represents a date, often viewed as year-month-day.
                  */
-                LocalDate startDate = resultSet.getDate("start").toLocalDate();
-                employeePayrollDataList.add(new EmployeePayrollData(employeeId, name, salary, startDate));
+                LocalDate Start = resultSet.getDate("Start").toLocalDate();
+                employeePayrollDataList.add(new EmployeePayrollData(id, name,salary,Start));
             }
             connection.close();
         } catch (Exception e) {
